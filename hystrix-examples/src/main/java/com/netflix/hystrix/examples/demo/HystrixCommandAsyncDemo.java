@@ -17,6 +17,7 @@ package com.netflix.hystrix.examples.demo;
 
 import java.math.BigDecimal;
 import java.net.HttpCookie;
+import java.security.SecureRandom;
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -118,7 +119,7 @@ public class HystrixCommandAsyncDemo {
         }
     }
 
-    private final static Random r = new Random();
+    private final static Random r = new SecureRandom();
 
     private class Pair<A, B> {
         private final A a;
