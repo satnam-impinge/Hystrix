@@ -23,6 +23,7 @@ package com.netflix.hystrix.util;
  * From http://gee.cs.oswego.edu/cgi-bin/viewcvs.cgi/jsr166/src/jsr166e/
  */
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 /**
@@ -135,7 +136,7 @@ abstract class Striped64 extends Number {
      * random, but may be set to a different value upon collisions.
      */
     static final class HashCode {
-        static final Random rng = new Random();
+        static final Random rng = new SecureRandom();
         int code;
         HashCode() {
             int h = rng.nextInt(); // Avoid zero to allow xorShift rehash
